@@ -57,7 +57,6 @@ The Log output is typically very explicit and identifies the lines with the offe
 I had to increase the timeout from 3 secs to 3 minutes, as some Boto interactions were exceeding the timeout limit.
 
 #4 - AWS Lambda Explorer Code (Python 2.7)
-
 ```
 # AWS Lambda Lambada - Matthias Gemelli - rev02 (from Blueprint Pyton27-S3)
 from __future__ import print_function
@@ -68,16 +67,25 @@ import boto3
 import os
 import sys
 
+
+
 def mylambda_ec2(event):   #get my EC2 instances - exceeds 3 sec timeout!!
+    #http://boto3.readthedocs.io/en/latest/guide/migrationec2.html
     print ('XXX - Lambda Explorer - AWS EC2 starting')
     client = boto3.client('ec2')
     region_iterator = client.describe_regions()['Regions']
     for region in region_iterator:
-        print ('Looking in region' + str(region))
+        #print ('Looking for EC2 instances in: ' + str(region['RegionName']))
         ec2 = boto3.resource('ec2', region_name=region['RegionName']) 
         instance_iterator = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
         for instance in instance_iterator:
-            print ('Found EC2: ' + str(instance.id) + str(instance.instance_type) + ' ' + str(region['RegionName']))
+            print ('XXX - Found EC2 : ' + str(instance.id)    + ' Type: ' + str(instance.instance_type) + ' in region: ' + str(region['RegionName']))
+            print ('    -  in State : ' + str(instance.state) + ' Reason: ' + str(instance.state_reason))
+            print ('    -  Launched : ' + str(instance.launch_time) + ' architecture: ' + str(instance.architecture))
+            print ('    -  with  IP : ' + str(instance.private_ip_address) + ' and public IP: ' +str(instance.public_ip_address)) 
+            print ('    -  Sec Grps : ' + str(instance.security_groups))
+            print ('    -       VPC : ' + str(instance.vpc_id))
+
             #instance.stop()
     return 'XXX - Lambda Explorer - AWS EC2 done'
 
@@ -159,19 +167,7 @@ def lambda_handler(event, context):
     #print (mylambda_modules())            #retrieve list of Python Modules
     #print (mylambda_s3(event))            #get AWS S3 details - requires permissions!!
     print (mylambda_ec2(event))           #get AWS EC2 details - requires permissions!!
-
-
+    #print (mylambda_ec2instance('i-05d13b99db20b8ab4', 'sa-east-1'))
+ 
     print ("XXX - Lambda Explorer - Done for now.")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
