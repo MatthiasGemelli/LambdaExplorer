@@ -9,6 +9,9 @@ I had to learn basic AWS interaction from within AWS Lambda.
 
 # 1 - Platform Notes
 The following AWS Lambda functions were written/tested with Python 2.7.
+**Caution**
+- Code does not contain any error handling (yet), e.g. for missing IAM permissions and the like.
+
 
 # 2 - Setup & Test
 - Simply log in to the AWS Console at https://console.aws.amazon.com/console/home
