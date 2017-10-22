@@ -1,5 +1,5 @@
 # LambdaExplorer
-AWS Lambda Explorer  
+a collection of AWS blueprints running on Python 2.7 for usage within AWS Lambda.   
 by Matthias Gemelli, October 2017
 
 # 0 - Context
