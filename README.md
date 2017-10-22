@@ -52,10 +52,10 @@ XXX - Lambda Explorer - Done for now.
 END RequestId: 123123123-b68c-11e7-a47f-123123123
 REPORT RequestId: 123123123-b68c-11e7-a47f-123123123	Duration: 0.91 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 25 MB	
 ```
-#3 - Troubleshooting
+# 3 - Troubleshooting
 The Log output is typically very explicit and identifies the lines with the offending code. 
 I had to increase the timeout from 3 secs to 3 minutes, as some Boto interactions were exceeding the timeout limit.
 
-#4 - AWS Lambda Explorer Code (Python 2.7)
+# 4 - AWS Lambda Explorer Code (Python 2.7)
 - https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_01_env.py
 - https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_ec2.py
