@@ -68,4 +68,11 @@ Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_
 
 ## 4.3 Lambda 03 - IAM Scanner
 Iterate through users and roles and displays their details.
-Code at 
+Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_ec2.py
+
+## 4.4 Lambda 04 - RDS Scanner
+Coming soon..
+
+## 4.5 Lambda 05 - Lightsail Scanner
+Coming soon...
+
