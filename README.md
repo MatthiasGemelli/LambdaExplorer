@@ -65,3 +65,7 @@ Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_01_
 Scans all regions for EC2 instances and displays information about each instance.  
 Code contains no error handling or pagination (e.g. adjust if you handlde large number of EC2 instances)
 Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_ec2.py
+
+## 4.3 Lambda 03 - IAM Scanner
+Iterate through users and roles and displays their details.
+Code at 
