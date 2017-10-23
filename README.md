@@ -70,11 +70,16 @@ Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_
 
 ## 4.3 Lambda 03 - IAM Scanner
 Iterate through users and roles and displays their details.
-Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_ec2.py
+Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_iam.py
 
-## 4.4 Lambda 04 - RDS Scanner
-Coming soon..
+## 4.4 Lambda 04 - EC2 Shutdown Recovery
+Inspired by someone else's nightly EC2 shutdown, I created this EC2 recovery Lambda.  
+Triggered by a Cloudwatch rule as explained http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/LogEC2InstanceState.html
 
-## 4.5 Lambda 05 - Lightsail Scanner
+
+Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_04_ec2_recov.py
+
+
+## 4.5 Lambda 05 - RDS, S3, Lightsail Scanner
 Coming soon...
 
