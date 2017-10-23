@@ -61,20 +61,24 @@ REPORT RequestId: 123123123-b68c-11e7-a47f-123123123	Duration: 0.91 ms	Billed Du
 # 4 - AWS Lambda Explorer Code (Python 2.7)
 ## 4.1 Lambda 01 - Event Parser & Environment 
 Parses event information (e.g. the S3 bucket/key that triggered the Lambda).  
+**Caution** Event structure differs between triggers (e.g. had to completely re-do for a Cloudwatch trigger. see below)  
+
 Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_01_env.py
 
 ## 4.2 Lambda 02 - EC2 Scanner
 Scans all regions for EC2 instances and displays information about each instance.  
-Code contains no error handling or pagination (e.g. adjust if you handlde large number of EC2 instances)
+Code contains no error handling or pagination (e.g. adjust if you handlde large number of EC2 instances)  
+
 Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_ec2.py
 
 ## 4.3 Lambda 03 - IAM Scanner
-Iterate through users and roles and displays their details.
-Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_02_iam.py
+Iterate through users and roles and displays their details.  
+
+Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_03_iam.py
 
 ## 4.4 Lambda 04 - EC2 Shutdown Recovery
 Inspired by someone else's nightly EC2 shutdown, I created this EC2 recovery Lambda.  
-Triggered by a Cloudwatch rule as explained http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/LogEC2InstanceState.html
+Using a Cloudwatch rule as trigger as per  http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/LogEC2InstanceState.html
 
 
 Code at https://github.com/MatthiasGemelli/LambdaExplorer/blob/master/lambda_04_ec2_recov.py
